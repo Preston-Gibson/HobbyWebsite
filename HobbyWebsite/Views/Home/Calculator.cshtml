@@ -1,6 +1,36 @@
 ﻿@{
     ViewData["Title"] = "Calculator";
 }
-<h1>@ViewData["Title"]</h1>
+<h1>Fee Calculator</h1>
 
-<p>This page will be used to make calculator logic.</p>
+<form>
+    <div class="row g-3">
+        <div class="col-md-6">
+            <label for="hourlyRate" class="form-label">Hourly Rate</label>
+            <input type="number"
+                   class="form-control"
+                   id="hourlyRate"
+                   value="15.50"
+                   readonly>
+        </div>
+
+        <div class="col-md-6">
+            <label for="numHours" class="form-label">
+                Number of tutoring hours
+            </label>
+            <input type="number"
+                   class="form-control"
+                   id="numHours"
+                   min="0">
+        </div>
+    </div>
+
+    <div class="mt-4 text-end">
+        <button type="button" class="btn btn-primary" onclick="calculateFee()">
+            Calculate
+        </button>
+    </div>
+</form>
+
+<br/><br/>
+<p id="resultString"></p>
